@@ -45,6 +45,8 @@ function Redux(props: Props) {
    */
   const handleChangeCount = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value
+    console.log(val)
+    console.log(inputNumber)
     // ignore not number
     if (val.match(/^([1-9]|0)+[0-9]*$/i)) {
       setInputNumber(Number(val))
@@ -102,9 +104,6 @@ function Redux(props: Props) {
   )
 }
 
-/**
- * @see https://nextjs.org/docs/api-reference/data-fetching/getInitialProps
- */
 Redux.getInitialProps = async (ctx: AppContext): Promise<Props> => {
   const { store } = ctx
   store.dispatch(
